@@ -68,14 +68,14 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "xterm", NULL };
 static const char *midcom[]  = { "xterm", "-e", "mc", NULL };
-/*static const char *rofimenupower[]  = { "rofi", "-show", "p", "-modi", "p:/home/italo/Workspace/dwm_all/rofi-power-menu/rofi-power-menu", "-theme", "Paper", "-width", "20", "-lines", "12", NULL };
+/*static const char *rofimenupower[]  = { "rofi", "-show", "p", "-modi", "p:/home/italo/Workspace/elshaddai/rofi-power-menu/rofi-power-menu", "-theme", "Paper", "-width", "20", "-lines", "12", NULL };
 static const char *rofimenu[]  = { "rofi", "-show", "combi", "-combi-modi", "window,drun,ssh", "-modi", "combi", NULL }; */
 static const char *gvim[]  = { "gvim", NULL };
 static const char *chrome[]  = { "google-chrome", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *xdotoolfechar[]  = { "xdotool", "key", "alt+F4", NULL };
-static const char *xmenu_main[]  = { "/home/italo/Workspace/dwm_all/xmenu/xmenu_main.sh", NULL };
-static const char *xmenu_power[]  = { "/home/italo/Workspace/dwm_all/xmenu/xmenu_power.sh", NULL };
+static const char *xmenu_main[]  = { "/home/italo/Workspace/elshaddai/xmenu/xmenu_main.sh", NULL };
+static const char *xmenu_power[]  = { "/home/italo/Workspace/elshaddai/xmenu/xmenu_power.sh", NULL };
 /*static const char *surf[] = { "surf", "duckduckgo.com", NULL };*/
 
 static const Launcher launchers[] = {
