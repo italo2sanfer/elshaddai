@@ -9,8 +9,8 @@ syntax on
 filetype plugin indent on
 
 " Colocar comando na Inicialização
-"au VimEnter * LustyFilesystemExplorer 
-"au VimEnter * NERDTree 
+"au VimEnter * LustyFilesystemExplorer
+"au VimEnter * NERDTree
 
 " Configurando diretórios
 cd /home/italo/Workspace/suap
@@ -155,22 +155,20 @@ nmap <c-f> /
 if has("gui_running")
   imap <c-o> <esc>:browse confirm e<cr>i
   nmap <c-o> :browse confirm e<cr>
+  "imap <c-f> <esc>:promptfind<cr>i
+  "nmap <c-f> :promptfind<cr>
+  imap <c-h> <esc>:promptrepl<cr>i
+  nmap <c-h> :promptrepl<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/xterm-color.png ToolBar.Terminal <esc><c-t>:terminal<cr><c-w>w:bd<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-panel-fish.png ToolBar.LimpaBusca :nohlsearch<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-typing-monitor.png ToolBar.NerdTree :NERDTree<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-typing-monitor.png ToolBar.TabEBrowse :tabnew<cr>:browse confirm e<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/spacefm-48-cube-blue.png ToolBar.QAll :qall<cr>
 else
   "nmap <c-o> :e\.<cr>
   nmap <c-o> :LustyFilesystemExplorerFromHere<cr>
   imap <c-o> <ESC>:LustyFilesystemExplorerFromHere<cr>i
 endif
-
-" GVim
-"imap <c-f> <esc>:promptfind<cr>i
-"nmap <c-f> :promptfind<cr>
-imap <c-h> <esc>:promptrepl<cr>i
-nmap <c-h> :promptrepl<cr>
-amenu icon=/usr/share/icons/hicolor/48x48/apps/xterm-color.png ToolBar.Terminal <esc><c-t>:terminal<cr><c-w>w:bd<cr>
-amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-panel-fish.png ToolBar.LimpaBusca :nohlsearch<cr>
-amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-typing-monitor.png ToolBar.NerdTree :NERDTree<cr>
-amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-typing-monitor.png ToolBar.TabEBrowse :tabnew<cr>:browse confirm e<cr>
-amenu icon=/usr/share/icons/hicolor/48x48/apps/spacefm-48-cube-blue.png ToolBar.QAll :qall<cr>
 
 " VimFileManager
 "nmap <insert> mf<down>|nmap <tab> <c-w>w|let g:netrw_keepdir=0|let g:netrw_localrmdir='rm -rf'

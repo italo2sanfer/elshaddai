@@ -75,15 +75,15 @@ static const char *chrome[]  = { "google-chrome", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *xdotoolfechar[]  = { "xdotool", "key", "alt+F4", NULL };
 static const char *xmenu_main[]  = { "/home/italo/Workspace/elshaddai/xmenu/xmenu_main.sh", NULL };
-static const char *xmenu_power[]  = { "/home/italo/Workspace/elshaddai/xmenu/xmenu_power.sh", NULL };
+/*static const char *xmenu_power[]  = { "/home/italo/Workspace/elshaddai/xmenu/xmenu_power.sh", NULL };*/
 /*static const char *surf[] = { "surf", "duckduckgo.com", NULL };*/
 
 static const Launcher launchers[] = {
   /* command       name to display */
+	{ xmenu_main,     "[M]"   },
 	{ chrome,         "Go"   },
 	{ termcmd,        "Xt"   },
 	{ gvim,           "Vim"  },
-	{ xmenu_main,     "[M]"   },
 	{ xdotoolfechar,  "[X]"  },
 };
 
@@ -159,7 +159,7 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
   /* Atalhos Italo */
-	{ ClkStatusText,        0,              Button1,        spawn,          {.v = xmenu_power } },
+	/*{ ClkStatusText,        0,              Button1,        spawn,          {.v = xmenu_power } },*/
 
 };
 
