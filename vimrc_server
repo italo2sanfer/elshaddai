@@ -9,7 +9,7 @@
 " - LustyExplorer
 " - nerdtree
 " - vim-easygrep
-call pathogen#infect()
+"call pathogen#infect()
 syntax on
 filetype plugin indent on
 
@@ -18,7 +18,7 @@ filetype plugin indent on
 "au VimEnter * NERDTree
 
 " Configurando diretórios
-cd /home/italo/Workspace
+"cd /home/italo/Workspace
 let g:netrw_keepdir=1
 
 " Ajuda terminal https://vimhelp.org/terminal.txt.html
@@ -74,10 +74,10 @@ imap \n <ESC>:NERDTree<CR>
 " Comentar - Bloco
 function CristoReiComentar()
   let line_text = getline('.')
-  if line_text[0:1] == '#.'
-    s/^#\.//
+  if line_text[0] == '#'
+    s/^#//
   else
-    s/^/#\./
+    s/^/#/
   endif
 endfunction
 nmap \m V:call CristoReiComentar()<CR>
@@ -98,14 +98,14 @@ set incsearch hlsearch wildmenu mat=6 tabstop=2 shiftwidth=2 expandtab cursorlin
 syntax on
 
 " Copiar
-vmap <c-c> "+y
-vmap <c-x> "+x
+vmap <c-c> "zy
+vmap <c-x> "zx
 " Colar
-xmap <c-v> <del>i<ESC>"+p<right>i
-cmap <c-v> <c-r>+
-imap <c-v> <esc>"+p<right>i
+xmap <c-v> <del>i<ESC>"zp<right>i
+cmap <c-v> <c-r>z
+imap <c-v> <esc>"zp<right>i
 " <c-v> no modo normal e a marcacao por colunas
-nmap <c-v> "+pi
+nmap <c-v> "zpi
 
 " Seleciona tudo
 nmap <c-a> GVgg
@@ -116,10 +116,6 @@ imap <c-z> <esc>ui
 nmap <c-z> u
 imap <c-y> <esc><c-r>i
 nmap <c-y> <c-r>
-
-" Janelas
-imap <c-w>v <esc><c-w>vi
-imap <c-w>s <esc><c-w>si
 
 " Outros
 imap <c-s> <esc>:w<cr>i
@@ -156,10 +152,6 @@ nmap <S-down> v<down>
 imap <F3> <esc>:terminal<cr>
 nmap <F3> :terminal<cr>
 
-" Atualizar Arquivo
-imap <F5> <esc>:e!<cr>
-nmap <F5> :e!<cr>
-
 " Buscar
 imap <c-f> <esc>/
 nmap <c-f> /
@@ -175,17 +167,18 @@ if has("gui_running")
   "nmap <c-f> :promptfind<cr>
   imap <c-h> <esc>:promptrepl<cr>i
   nmap <c-h> :promptrepl<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-typing-monitor.png ToolBar.BufExplorer \bt
   amenu icon=/usr/share/icons/hicolor/48x48/apps/xterm-color.png ToolBar.Terminal <esc><c-t>:terminal<cr><c-w>w:bd<cr>
   amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-panel-fish.png ToolBar.LimpaBusca :nohlsearch<cr>
-  amenu icon=/usr/share/icons/hicolor/48x48/apps/libreoffice-main.png ToolBar.BufExplorer \bt
-  amenu icon=/usr/share/icons/hicolor/48x48/apps/libreoffice-main.png ToolBar.NerdTree :NERDTreeToggle<cr>
-  amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-panel-force-quit.png ToolBar.DeleteBuffer :bd<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-typing-monitor.png ToolBar.NerdTree :NERDTree<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/mate-typing-monitor.png ToolBar.TabEBrowse :tabnew<cr>:browse confirm e<cr>
   amenu icon=/usr/share/icons/hicolor/48x48/apps/spacefm-48-cube-blue.png ToolBar.CloseWithQ :q<cr>
+  amenu icon=/usr/share/icons/hicolor/48x48/apps/spacefm-48-cube-blue.png ToolBar.DeleteBuffer :bd<cr>
   amenu icon=/usr/share/icons/hicolor/48x48/apps/spacefm-48-cube-blue.png ToolBar.QAll :qall<cr>
 else
-  "nmap <c-o> :e\.<cr>
-  nmap <c-o> :LustyFilesystemExplorerFromHere<cr>
-  imap <c-o> <ESC>:LustyFilesystemExplorerFromHere<cr>i
+  nmap <c-o> :e\.<cr>
+  "nmap <c-o> :LustyFilesystemExplorerFromHere<cr>
+  "imap <c-o> <ESC>:LustyFilesystemExplorerFromHere<cr>i
 endif
 
 " VimFileManager
