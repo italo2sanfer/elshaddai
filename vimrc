@@ -80,9 +80,9 @@ function CristoReiComentar()
     s/^/#\./
   endif
 endfunction
-nmap \m V:call CristoReiComentar()<CR>
-vmap \m :call CristoReiComentar()<CR>
-imap \m <ESC>V:call CristoReiComentar()<CR>i
+nmap \m V:call CristoReiComentar()<CR><down>
+vmap \m :call CristoReiComentar()<CR><down>
+imap \m <ESC>V:call CristoReiComentar()<CR><down>i
 " Comentar - Linha Por linha
 imap <F3> <c-c>I#<down>
 nmap <F3> I#<down><c-c>
@@ -96,6 +96,21 @@ imap \; <ESC>:
 set wildignore=*.asta,*.pyc,*.pdf,*.doc,*.xcf,*.png,*.jpg,*.jpeg,*.gif,*.svg,*.mp4,*.mp3,*/cache/*,*/cache_/*,*.ogg,*.tgz,*.webm,*.ttf,*.PDF
 set incsearch hlsearch wildmenu mat=6 tabstop=2 shiftwidth=2 expandtab cursorline mouse=a autoindent nowrap number
 syntax on
+
+" Limpa a barra de status quando o vimrc é recarregado.
+"set statusline=
+" Lado esquerdo da barra de status.
+"set statusline+=\ %F\ %M\ %Y\ %R
+" Utiliza um divisor para separar o lado esquerdo do lado direito.
+"set statusline+=%=
+" Lado direito da barra de status.
+"set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+" Mostra a barra de status na penúltima linha.
+"set laststatus=2"
+
+" Busca Arquivos
+nmap <c-j> :Leaderf file --popup<cr>
+imap <c-j> <esc>:Leaderf file --popup<cr>
 
 " Copiar
 vmap <c-c> "+y
