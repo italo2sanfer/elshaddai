@@ -1,0 +1,40 @@
+## START GITPOD INTEGRATION
+## This section is managed by Gitpod. Any manual changes will be lost.
+Include "code_gitpod.d/config"
+## END GITPOD INTEGRATION
+
+host maizena
+ hostname maizena.iff.edu.br
+ port 60000
+ user italo
+
+host producao_participa
+ hostname 10.0.1.65
+ port 60000
+ 
+host producao_mentos_client_portal
+ hostname 10.0.1.14
+ port 60000
+
+host teste_client_portal
+ hostname 10.0.1.121
+ port 60000
+
+host teste_container_portal
+ hostname 10.0.1.126
+ port 22
+
+host container_devops_gce_1
+ hostname 172.27.0.2
+ port 22
+ user devops
+
+host container_python
+ hostname 172.17.0.3
+ port 22
+ user python
+
+ host vm-devops
+  hostname 192.168.100.102
+  port 22
+  user dev
